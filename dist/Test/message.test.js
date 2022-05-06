@@ -16,11 +16,16 @@ _chai["default"].use(_chaiHttp["default"]);
 
 describe('Tests of the contact me enpoints', function () {
   describe('Test the sent the contact message', function () {
-    var message = {
+   /* var message = {
       name: _faker.faker.name.findName(),
       email: _faker.faker.internet.email(),
       msg: _faker.faker.lorem.sentence()
-    };
+    };*/
+    var message = {
+      name: "Gaju",
+      email: "gaju@gmail.com",
+      msg: "rrrr"
+    }
     var message2 = {
       name: _faker.faker.name.findName(),
       email: _faker.faker.internet.email(),

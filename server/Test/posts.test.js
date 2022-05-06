@@ -31,15 +31,15 @@ describe('Tests blog enpoints', () => {
 			})
 		});
 
-		it('Should get all posts', done => {
-			chai.request(app)
-			.post('/api/post/getAll')
-			.end((err, res) => {
-				res.should.have.status(404);
-				res.body.should.be.a('object');
-				done();
-			})
-		})
+		// it('Should get all posts', done => {
+		// 	chai.request(app)
+		// 	.post('/api/post/getAll')
+		// 	.end((err, res) => {
+		// 		res.should.have.status(404);
+		// 		res.body.should.be.a('object');
+		// 		done();
+		// 	})
+		// })
 
 		it('Should get one message', done => {
 			chai.request(app)

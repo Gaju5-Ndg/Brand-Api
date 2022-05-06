@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 
 const  mongoConnect= async ()=>{
     
-   await mongoose.connect( 'mongodb+srv://Rose-31:ikinyogote@cluster0.ehn4f.mongodb.net/test', {
+   await mongoose.connect( 'mongodb+srv://chris:chris@cluster0.k1npp.mongodb.net/gaju', {
         useNewUrlParser: true,
     })
     .then(()=>console.log('database connected successfully'))

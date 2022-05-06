@@ -1,11 +1,17 @@
 {
     "name": "node-js",
     "version": "1.0.0",
+    
     "description": "",
+    
+    
     "main": "index.js",
     "scripts": {
-        "test": "node --require @babel/polyfill --require @babel/register ./node_modules/mocha/bin/mocha server/Test/*.js --exit ",
+        
+ 
+ "test": " nyc mocha --require @babel/register ./server/test  --recursive --exit --timeout 30000",
         "start": "node --require @babel/polyfill dist/index.js",
+       
         "build": "babel server --out-dir dist",
         "dev": "babel-node server/index.js"
     },
@@ -27,6 +33,7 @@
         "js": "^0.1.0",
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^6.2.10",
+        "nyc": "^15.1.0",
         "path": "^0.12.7",
         "swagger-ui-express": "^4.3.0"
     },

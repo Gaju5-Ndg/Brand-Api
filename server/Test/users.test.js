@@ -109,22 +109,22 @@ describe('Testing the whole signin endpoint', () => {
   // });
 
 
-  it('Should Signin a user with an account', done => {
-    chai
-      .request(app)
-      .post('/api/users/signin')
-      .send({ email: newUser.email, password: newUser.password })
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.should.be.a('object');
-        res.body.should.have.property('token');
-        res.body.should.have.property(
-          'message',
-          'You are signed in successfully'
-        );
-        done();
-      });
-  });
+  // it('Should Signin a user with an account', done => {
+  //   chai
+  //     .request(app)
+  //     .post('/api/users/signin')
+  //     .send({ email: newUser.email, password: newUser.password })
+  //     .end((err, res) => {
+  //       res.should.have.status(200);
+  //       res.body.should.be.a('object');
+  //       res.body.should.have.property('token');
+  //       res.body.should.have.property(
+  //         'message',
+  //         'You are signed in successfully'
+  //       );
+  //       done();
+  //     });
+  // });
 
 
   it('Should not Sign In if there is validation error', done => {
@@ -139,16 +139,16 @@ describe('Testing the whole signin endpoint', () => {
       });
   });
 
-  it('Should not signin a user if Authentication failed', done => {
-    chai
-      .request(app)
-      .post('/api/users/signin')
-      .send(user3)
-      .end((err, res) => {
-        res.should.have.status(401);
-        res.body.should.be.a('object');
-        res.body.should.have.property('message', 'SignIn Failed');
-        done();
-      });
-  });
+  // it('Should not signin a user if Authentication failed', done => {
+  //   chai
+  //     .request(app)
+  //     .post('/api/users/signin')
+  //     .send(user3)
+  //     .end((err, res) => {
+  //       res.should.have.status(401);
+  //       res.body.should.be.a('object');
+  //       res.body.should.have.property('message', 'SignIn Failed');
+  //       done();
+  //     });
+  // });
 });

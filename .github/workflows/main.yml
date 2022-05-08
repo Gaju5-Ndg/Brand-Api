@@ -31,9 +31,9 @@ jobs:
           npm test
         env:
           MONGODB_KEY : ${{ secrets.MONGODB_KEY }} 
-          # MONGO_URL: ${{ secrets.MONGO_URL }}   
+            
           SECRET_KEY: ${{ secrets.SECRET_KEY }}  
-          # JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }} 
+           
  deploy:
     name: Deploy
     needs: [test]

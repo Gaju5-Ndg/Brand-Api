@@ -32,9 +32,9 @@ jobs:
         env:
           MONGODB_KEY : ${{ secrets.MONGODB_KEY }} 
           SECRET_KEY: ${{ secrets.SECRET_KEY }} 
-
           
- deploy:
+
+  deploy:
     name: Deploy
     needs: [test]
     runs-on: ubuntu-latest

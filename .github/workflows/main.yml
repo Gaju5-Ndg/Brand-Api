@@ -31,9 +31,9 @@ jobs:
           npm test
         env:
           MONGODB_KEY : ${{ secrets.MONGODB_KEY }} 
-            
+
           SECRET_KEY: ${{ secrets.SECRET_KEY }}  
-           
+
  deploy:
     name: Deploy
     needs: [test]
@@ -48,4 +48,4 @@ jobs:
       - name: Add remote origin to Heroku
         run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY}}@git.heroku.com/${{ secrets.HEROKU_APP_NAME}}.git
       - name: Deploy code to heroku
-        run: git push heroku main          
+        run: git push heroku main           

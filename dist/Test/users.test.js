@@ -6,7 +6,7 @@ var _chaiHttp = _interopRequireDefault(require("chai-http"));
 
 var _faker = require("@faker-js/faker");
 
-var _index = _interopRequireDefault(require("../dist/index.js"));
+var _index = _interopRequireDefault(require("../index.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

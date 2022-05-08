@@ -27,7 +27,7 @@ on:
 
 jobs:
   
-  test:
+   test:
     name: Test
     runs-on: ubuntu-latest
 

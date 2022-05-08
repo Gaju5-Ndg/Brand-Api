@@ -31,9 +31,8 @@ jobs:
           npm test
         env:
           MONGODB_KEY : ${{ secrets.MONGODB_KEY }} 
-
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}  
-
+          SECRET_KEY: ${{ secrets.SECRET_KEY }} 
+           
  deploy:
     name: Deploy
     needs: [test]

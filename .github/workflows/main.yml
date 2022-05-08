@@ -1,24 +1,3 @@
-# version: 2.1
-
-# jobs:
-#   test:
-   
-#     docker:
-#       - image: cimg/node:16.13.2 
-
-#     steps:
-#       - checkout   
-#       - run:
-#           name: install packages
-#           command: npm install
-#       - run:
-#           name: Run Tests
-#           command: npm run test
-
-# workflows:
-#   orb-free-workflow:
-#     jobs:
-#       - test
 name: Node.JS CI/CD
 
 on:

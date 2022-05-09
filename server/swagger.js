@@ -191,7 +191,7 @@ const config = {
           },
         ],
         requestBody: {
-          description: "default router should all articles that were created",
+          description: "default router should view all articles that were created",
           content: {
             "application/json": {
               schema: {},

@@ -38,20 +38,25 @@ import postRouter from "./routes/blog.js";
 import messageRoutes from "./routes/messages.js";
 import commentRouter from "./routes/comments.js";
 
+const PORT = process.env.PORT || 3000;
+mongoConnect();
+
 const app = express();
 
 app.use(express.json());
-const PORT = process.env.PORT || 3000;
+
 
 app.use("/api/users", userRouter);
 
 app.use("/api/post", postRouter);
 app.use("/api/message", messageRoutes);
 app.use("/api/comment", commentRouter);
-app.use("/api/port", swaggerUi.serve, swaggerUi.setup(swaggerOptions));
-app.use("/", (req, res) => {
-  res.send("<h1>Welcome to the API</h1>");
-});
+app.use("api/docs", swaggerUi.serve, swaggerUi.setup(swaggerOptions));
+//app.use("/api/port", swaggerUi.serve, swaggerUi.setup(swaggerOptions));
+//.use("/", (req, res) => {
+ // res.send("<h1>Welcome to the API</h1>");
+//});
+
 
 app.listen(PORT, () => {
   console.log(`Server Started at ${PORT}`);

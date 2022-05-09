@@ -1,3 +1,24 @@
+# version: 2.1
+
+# jobs:
+#   test:
+   
+#     docker:
+#       - image: cimg/node:16.13.2 
+
+#     steps:
+#       - checkout   
+#       - run:
+#           name: install packages
+#           command: npm install
+#       - run:
+#           name: Run Tests
+#           command: npm run test
+
+# workflows:
+#   orb-free-workflow:
+#     jobs:
+#       - test
 name: Node.JS CI/CD
 
 on:
@@ -5,7 +26,7 @@ on:
     branches: [main]
 
 jobs:
-
+  
    test:
     name: Test
     runs-on: ubuntu-latest
@@ -20,31 +41,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Use Node.JS ${{ matrix.node-version }}  
+      - name: Use Node.JS ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }} 
-
+          node-version: ${{ matrix.node-version }}
+      
       - name: NPM install, build and test
         run: |
           npm install
           npm test
         env:
-          MONGODB_KEY : ${{ secrets.MONGODB_KEY }}    
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}        
-
-  deploy:
-    name: Deploy
-    needs: [test]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Add remote origin to Heroku
-        run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY}}@git.heroku.com/${{ secrets.HEROKU_APP_NAME}}.git
-      - name: Deploy code to heroku
-        run: git push heroku main           
+          MONGODB_KEY : ${{ secrets.MONGODB_KEY }} 
+          # MONGO_URL: ${{ secrets.MONGO_URL }}   
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}  
+          # JWT_EXPIRES_IN: ${{ secrets.JWT_EXPIRES_IN }} 

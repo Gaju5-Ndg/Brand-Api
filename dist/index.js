@@ -11,6 +11,8 @@ var _swagger = _interopRequireDefault(require("./swagger.js"));
 
 var _express = _interopRequireDefault(require("express"));
 
+var _cors = _interopRequireDefault(require("./cors"));
+
 var _dbConfig = _interopRequireDefault(require("./config/db.config.js"));
 
 var _user = _interopRequireDefault(require("./routes/user.js"));

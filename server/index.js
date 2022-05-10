@@ -31,6 +31,7 @@
 // export default app;
 import swaggerUi from "swagger-ui-express";
 import swaggerOptions from "./swagger.js";
+import cors from "cors";
 import express from "express";
 import mongoConnect from "./config/db.config.js";
 import userRouter from "./routes/user.js";
@@ -38,10 +39,12 @@ import postRouter from "./routes/blog.js";
 import messageRoutes from "./routes/messages.js";
 import commentRouter from "./routes/comments.js";
 
+
 const PORT = process.env.PORT || 3000;
 mongoConnect();
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
